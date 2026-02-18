@@ -1,0 +1,240 @@
+:root{
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #ff6a00;     
+  --primary-2: #2563eb;    
+  --border: #e5e7eb;
+  --shadow: 0 10px 25px rgba(0,0,0,0.08);
+  --radius: 14px;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Layout */
+.container{
+  max-width: 980px;
+  margin: 30px auto;
+  padding: 0 16px;
+}
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+/* Header / Title */
+.page-title{
+  margin: 0 0 14px 0;
+  font-size: 28px;
+  letter-spacing: 0.2px;
+}
+
+/* Navbar */
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color: var(--text);
+  font-weight: 800;
+}
+
+.brand-badge{
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  font-weight: 900;
+}
+
+.nav-links{
+  display:flex;
+  gap:10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.nav-links a:hover{
+  border-color: var(--border);
+  background: #f9fafb;
+}
+
+/* Sections */
+.section-title{
+  margin: 18px 0 8px;
+  font-size: 18px;
+  border-left: 5px solid var(--primary);
+  padding-left: 10px;
+}
+
+.muted{
+  color: var(--muted);
+}
+
+/* skills */
+.badges{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.badge{
+  display:inline-block;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--border);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* intereses */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.grid .mini-card{
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.grid .mini-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+
+.emoji{
+  font-size: 34px;
+}
+
+/* habilidades*/
+.skill{
+  margin: 14px 0;
+}
+
+.skill-name{
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.bar{
+  width: 100%;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow:hidden;
+  border: 1px solid var(--border);
+}
+
+.progress{
+  height: 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+  font-size: 12px;
+  color: #fff;
+  line-height: 18px;
+  text-align:right;
+  padding-right: 8px;
+  font-weight: 800;
+}
+
+/* metas */
+.goal{
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--primary);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin: 12px 0;
+  transition: transform .15s ease, background .15s ease;
+}
+
+.goal:hover{
+  transform: translateX(3px);
+  background: #fff7f0;
+}
+
+.goal h3{
+  margin: 0 0 6px 0;
+}
+
+.goal p{
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Back link */
+.back{
+  display:inline-block;
+  margin-top: 18px;
+  text-decoration:none;
+  color: var(--primary-2);
+  font-weight: 800;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px){
+  .nav-inner{ flex-direction: column; align-items: flex-start; }
+  .nav-links{ width: 100%; justify-content: flex-start; }
+  .grid{ grid-template-columns: 1fr; }
+  .card{ padding: 18px; }
+  .page-title{ font-size: 24px; }
+}
