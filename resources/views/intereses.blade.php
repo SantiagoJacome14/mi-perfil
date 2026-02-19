@@ -4,121 +4,77 @@
     <meta charset="UTF-8">
     <title>Mis Intereses</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .card {
-            background: #ffffff;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
-        }
-
-        .emoji {
-            font-size: 40px;
-        }
-
-        .card h3 {
-            margin-top: 10px;
-            color: #444;
-        }
-
-        .back {
-            display: block;
-            text-align: center;
-            margin-top: 30px;
-            text-decoration: none;
-            color: #007BFF;
-            font-weight: bold;
-        }
-
-        .back:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
 </head>
 <body>
 
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="nav-inner">
+        <a class="brand" href="/perfil">
+            <span class="brand-badge">M</span>
+            <span>Mi Perfil</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="/perfil">Perfil</a>
+            <a href="/perfil/intereses">Intereses</a>
+            <a href="/perfil/habilidades">Habilidades</a>
+            <a href="/perfil/metas">Metas</a>
+        </div>
+    </div>
+</div>
+
 <div class="container">
+    <div class="card">
 
-    <h1>Mis Intereses</h1>
+        <h1 class="page-title">Mis Intereses</h1>
+        <p class="muted">Cosas que me gustan y en las que me interesa seguir aprendiendo.</p>
 
-    <div class="grid">
+        <!-- Misma interfaz actual (grid + mini-card) PERO con los textos del código viejo -->
+        <div class="grid">
 
-        <div class="card">
-            <div class="emoji">💻</div>
-            <h3>Tecnología</h3>
-            <p>Me apasiona el desarrollo web y las nuevas herramientas digitales.</p>
+            <div class="mini-card">
+                <div class="emoji">💻</div>
+                <h3>Tecnología</h3>
+                <p class="muted">Me apasiona el desarrollo web y las nuevas herramientas digitales.</p>
+            </div>
+
+            <div class="mini-card">
+                <div class="emoji">🧴</div>
+                <h3>Perfumería</h3>
+                <p class="muted">Interés en fragancias, notas aromáticas y emprendimiento.</p>
+            </div>
+
+            <div class="mini-card">
+                <div class="emoji">🎮</div>
+                <h3>Videojuegos</h3>
+                <p class="muted">Disfruto jugar y explorar nuevas experiencias gaming.</p>
+            </div>
+
+            <div class="mini-card">
+                <div class="emoji">🏋️‍♂️</div>
+                <h3>Entrenamiento</h3>
+                <p class="muted">Me gusta mantenerme activo y mejorar mi condición física.</p>
+            </div>
+
+            <div class="mini-card">
+                <div class="emoji">📈</div>
+                <h3>Emprendimiento</h3>
+                <p class="muted">Interés en crear negocios digitales y proyectos propios.</p>
+            </div>
+
+            <div class="mini-card">
+                <div class="emoji">🌎</div>
+                <h3>Aprendizaje</h3>
+                <p class="muted">Me gusta aprender constantemente nuevas habilidades.</p>
+            </div>
+
         </div>
 
-        <div class="card">
-            <div class="emoji">🧴</div>
-            <h3>Perfumería</h3>
-            <p>Interés en fragancias, notas aromáticas y emprendimiento.</p>
-        </div>
-
-        <div class="card">
-            <div class="emoji">🎮</div>
-            <h3>Videojuegos</h3>
-            <p>Disfruto jugar y explorar nuevas experiencias gaming.</p>
-        </div>
-
-        <div class="card">
-            <div class="emoji">🏋️‍♂️</div>
-            <h3>Entrenamiento</h3>
-            <p>Me gusta mantenerme activo y mejorar mi condición física.</p>
-        </div>
-
-        <div class="card">
-            <div class="emoji">📈</div>
-            <h3>Emprendimiento</h3>
-            <p>Interés en crear negocios digitales y proyectos propios.</p>
-        </div>
-
-        <div class="card">
-            <div class="emoji">🌎</div>
-            <h3>Aprendizaje</h3>
-            <p>Me gusta aprender constantemente nuevas habilidades.</p>
-        </div>
+        <a class="back" href="/perfil">← Volver al perfil</a>
 
     </div>
-
-    <a href="/perfil" class="back">← Volver al perfil</a>
-
 </div>
 
 </body>
